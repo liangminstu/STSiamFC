@@ -6,7 +6,7 @@ import copy
 import torch.utils.data as data
 
 
-from data_process.createlabelFCpp import make_densebox_target
+from data_process.createlabel import make_densebox_target
 from data_process.utils import *
 from data_process.gauss import gaussian_label_function
 
