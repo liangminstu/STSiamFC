@@ -22,8 +22,7 @@ from run_Siam3D import Siam3D_init,Siam3D_track,Siam3D_trackCLS
 
 parser = argparse.ArgumentParser(description='PyTorch SiamRPN OTB Test')
 parser.add_argument('--dataset', dest='dataset', default='VOT2019', help='datasets')
-# parser.add_argument('-v', '--visualization', dest='visualization', action='store_true',
-#                     help='whether visualize result')
+
 
 
 class Dataset(object):
@@ -362,11 +361,7 @@ def track_video(model, video):
 
             update=False
             gt_bbox_ = [cx-(w-1)/2, cy-(h-1)/2, w, h]
-            # img=cv2.imread(image_files[0])
-            # img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-           
-            # cv2.rectangle(img,(int(cx-(w-1)/2),int(cy-(h-1)/2)),(int(cx+(w-1)/2),int(cy+(h-1)/2)),(255,255,0),2)
-            # cv2.imwrite('/home/guiyan/workspaces/liangmin/Siam3DM1/Track/test/00.jpg', img)
+            
             state = Siam3D_init(image_files[f], target_pos, target_sz, update)  # init tracker
            
             # location = cxy_wh_2_rect(state['target_pos'], state['target_sz'])
