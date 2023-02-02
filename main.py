@@ -15,11 +15,11 @@ from os.path import isfile, join, isdir
 from data_process.gauss import gaussian_label_function
 
 from logs.logger import *
-from data_process.dataset2CppOp import Pair
+from data_process.dateFCppOp import Pair
 from data_process.utils import *
 import os
 from losses.totalloss import TotalLoss
-from data_process.lr import *
+from lr import *
 
 from network.R3DCppOp3D import SiamR3D, R3DNet, SpatioTemporalResBlock
 
