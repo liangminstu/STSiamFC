@@ -2,9 +2,9 @@
 
 ## 2、Installation
 ### 2.1. create conda virtual env.
-···
+```
 conda create -n STSiamFC python=3.6
-···
+```
 
 ### 2.2. activate conda virtual env.
 '''
