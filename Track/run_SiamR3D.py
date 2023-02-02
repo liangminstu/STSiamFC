@@ -77,7 +77,7 @@ def Siam3D_init(image_file, target_pos, target_sz,update):
     return state
 
 
-def Siam3D_track(state, ims,model,regions,rect,Alliou,f):
+def Siam3D_track(state, ims,model,regions,f):
     vis=False
     p = state['p']
     gauss_label = state['gauss_label'].to(device)
@@ -169,7 +169,8 @@ def Siam3D_track(state, ims,model,regions,rect,Alliou,f):
             pre = np.array(pre).astype(np.float)
             prelwh=np.array(prelwh).astype(np.float)
             
-            Alliou.append(overlap_ratio(np.array(rect[j]),prebox))
+            
+            
             regions.append(prebox)
 
             if 0.8>top>0.3:
@@ -182,11 +183,6 @@ def Siam3D_track(state, ims,model,regions,rect,Alliou,f):
     state['target_sz'] = prebox[2:]
     state['regions'] = regions
    
-    return state,prebox,Alliou
+    return state,prebox
 
 
-
-
-    
-   
-    return state,prebox,Alliou
