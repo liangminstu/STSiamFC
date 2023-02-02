@@ -7,7 +7,7 @@ from os import makedirs
 from os.path import realpath, dirname, join, isdir, exists
 from torch.autograd import Variable
 
-from network.R3D import *
+from network.SiamR3D import *
 
 from data_process.utils import rect_2_cxy_wh, cxy_wh_2_rect,get_template_z,\
     get_template_x1,_postprocess_score,_postprocess_box,xyxy2cxywh,overlap_ratio,xywh2xyxy
@@ -62,14 +62,9 @@ def Siam3D_init(image_file, target_pos, target_sz,update):
     else:
         ts=4
     for num in range(ts):
-        
-        
         target_bb[num, :] = copy.copy([127/2, 127/2, target_sz[0], target_sz[1]])
         z_crops[:, num, :, :] = z_crop
-    z_crops =Variable(z_crops.unsqueeze(0))
-    
-
-    
+    z_crops =Variable(z_crops.unsqueeze(0))    
     gauss_label = gaussian_label_function(torch.from_numpy(target_bb).float(), 1/4/6, 1, 17, 127, end_pad_if_even=True, density=False,
                                         uni_bias=0)
     
@@ -88,8 +83,7 @@ def Siam3D_track(state, ims,model,regions,rect,Alliou,f):
     gauss_label = state['gauss_label'].to(device)
     z_crops=state['z_crops'].to(device)
     target_pos = state['target_pos']
-   
-    pos=target_pos
+  
     update=0
     target_sz=state['target_sz']
     
