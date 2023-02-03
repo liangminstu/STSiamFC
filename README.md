@@ -50,7 +50,7 @@ python /eval/eval.py              \
         --num 1                         \ # number thread to eval
         --tracker_prefix 'checkpoint'     # tracker_name_prefix
 ```
-##References
+## References
 ```
 [1] VOT python toolkit: https://github.com/StrangerZhang/pysot-toolkit
 ```
