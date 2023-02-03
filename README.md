@@ -24,6 +24,7 @@ conda install numpy matplotlib pillow opencv-python
 ## 3、Train tracker
 ### 3.1. Preprocess the dataset(eg:IMAGENET2015)
 ```
+cd data_process
 pthon -u createdataset.py
 ```
 
@@ -48,4 +49,8 @@ python /eval/eval.py              \
         --dataset VOT2018               \ # dataset name
         --num 1                         \ # number thread to eval
         --tracker_prefix 'checkpoint'     # tracker_name_prefix
+```
+##References
+```
+[1] VOT python toolkit: https://github.com/StrangerZhang/pysot-toolkit
 ```
