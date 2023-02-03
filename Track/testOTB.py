@@ -13,7 +13,7 @@ from network.SiamR3D import *
 
 from data_process.utils import rect_2_cxy_wh, cxy_wh_2_rect,get_template_z,\
     get_template_x1,_postprocess_score,_postprocess_box,xyxy2cxywh,overlap_ratio,xywh2xyxy
-from run_Siam3D import Siam3D_trackCLS
+from run_Siam3D import *
 from data_process.gauss import gaussian_label_function
 
 parser = argparse.ArgumentParser(description='PyTorch SiamR3D OTB Test')
@@ -111,7 +111,7 @@ def load_dataset(dataset):
         info[v]['image_files'] = [join(base_path, path_name, 'img', im_f) for im_f in info[v]['image_files']]
         info[v]['gt'] = np.array(info[v]['gt_rect'])-[1,1,0,0]  # our tracker is 0-index
         info[v]['name'] = v
-    # info = sorted(info.keys())
+    
     return info
 
 
