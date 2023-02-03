@@ -35,16 +35,13 @@ pyhon main.py
 
 ## 4、Test tracker
 ```
-python -u Track/test.py                           \
-        --snapshot "checkpointPath"    \ # model path
-        --dataset VOT2018                               \ # dataset name
-        --config config/config_vot2018.yaml               # config file
+python -u Track/testVOT.py                           
 ```
 
 ## 5、Eval tracker
 Testing results are saved in results.zip
 ```
-python /eval/eval.py              \
+python /eval/eval.py              
         --tracker_path ./results        \ # result path
         --dataset VOT2018               \ # dataset name
         --num 1                         \ # number thread to eval
