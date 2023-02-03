@@ -13,10 +13,8 @@ from tqdm import tqdm
 from PIL import Image
 from toolkit.utils.region import vot_overlap, vot_float2str
 import os
-import sys
-sys.path.append('/home/guiyan/workspaces/liangmin/Siam3DM1')
-# from network.C3D import *
-from network.R3DCppOp3D import *
+
+from network.SiamR3D import *
 from data_process.utils import *
 
 
